@@ -6,7 +6,8 @@ console.log(canvas.width / 2)
 console.log(canvas.height / 2)
 const ctx = canvas.getContext('2d');
 var img = document.getElementById("scream");
-
+const buttonleft = document.getElementById('leftClick');
+const buttonright = document.getElementById('rightClick');
 
 
 let score = 8;
@@ -109,6 +110,26 @@ function movePaddle() {
         paddle.x = 0
     }
 }
+
+buttonleft.addEventListener('click', function () {
+    paddle.x += paddle.dx;
+
+    // Wall detection
+    if (paddle.x + paddle.w > canvas.width) {
+        paddle.x = canvas.width - paddle.w;
+    }
+})
+
+buttonright.addEventListener('click', function () {
+    if (paddle.x < 0) {
+        paddle.x = 0
+    }
+
+    // Wall detection
+    if (paddle.x + paddle.w > canvas.width) {
+        paddle.x = canvas.width - paddle.w;
+    }
+})
 
 // Move ball on canvas
 function moveBall() {
