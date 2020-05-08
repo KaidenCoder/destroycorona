@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Breakout!</title>
+</head>
+
+<body>
+    <h1 style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">DESTROY COVID-19
+    </h1>
+
+    <button class="btn rules-btn" id="rules-btn">Show Rules</button>
+    <div id="rules" class="rules">
+        <h2>How To Play:</h2>
+        <p>Use your right and left keys to move the paddle to bounce the ball up and destroy the COVID-19</p>
+        <p>If you miss the ball, your score and the blocks will reset.</p>
+        <button id="close-btn" class="btn">Close</button>
+    </div>
+    <canvas id="canvas" width="400" height="400"></canvas>
+    <div class="popup">
+        <div class="popup-box">
+            <h2 style="color: black;">Congratulations</h2>
+            <p>You successfully destroyed COVID-19
+            </p>
+            <button class="button-popup">Destroy COVID-19 Again</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
