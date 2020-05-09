@@ -1,5 +1,5 @@
 # destroycorona
-Destroy COVID-19 and save the world
+Destroy COVID-19 and save the world. [Play here](https://kurosakicoder.github.io/destroycorona/)
 
 ## Project Info
 This project contains all the files so you just need to clone and run the project.
