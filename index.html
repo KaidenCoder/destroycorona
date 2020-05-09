@@ -7,27 +7,39 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
-    <title>Breakout!</title>
+    <title>Destroy COVID-19</title>
 </head>
 
 <body>
-    <h1 style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">DESTROY COVID-19
-    </h1>
 
-    <button class="btn rules-btn" id="rules-btn">Show Rules</button>
-    <div id="rules" class="rules">
-        <h2>How To Play:</h2>
-        <p>Use your right and left keys to move the paddle to bounce the ball up and destroy the COVID-19</p>
-        <p>If you miss the ball, your score and the blocks will reset.</p>
-        <button id="close-btn" class="btn">Close</button>
+
+    <div>
+        <button class="btn rules-btn" id="rules-btn">Show Rules</button>
+        <div id="rules" class="rules">
+            <h2 class="text">How To Play:</h2>
+            <p class="text">Use your right and left keys to move the paddle to bounce the ball up and destroy the
+                COVID-19</p>
+            <p class="text">If you miss the ball, your score and COVID-19 will reset.</p>
+            <p class="text">If you destroy COVID-19 completely, you save the world.</p>
+            <button id="close-btn" class="btn">Close</button>
+        </div>
     </div>
-    <canvas id="canvas" width="400" height="400"></canvas>
-    <button id="leftClick" class="btn btn-secondary" style="background: blue; justify-content: left;">Left</button>
-    <button id="rightClick" class="btn btn-secondary" style="background: blue;">Right</button>
+    <h1 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; color: #fff;">SAVE
+        THE WORLD</h1>
+    <h1 style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; color: rgba(255,0,0,0.7);">
+        DESTROY COVID-19
+    </h1>
+    <!-- <div class="covid"> -->
+    <canvas id="canvas" width="800" height="480"></canvas>
+    <!-- </div> -->
+    <!-- <button id="leftClick" onclick="javascript:alert('Hello World!')" on class="btn btn-secondary"
+        style="background: blue; justify-content: left;">Left</button>
+    <button id="rightClick" onclick="javascript:alert('Hello World!')" class="btn btn-secondary"
+        style="background: blue;">Right</button> -->
     <div class="popup">
         <div class="popup-box">
             <h2 style="color: black;">Congratulations</h2>
-            <p>You successfully destroyed COVID-19
+            <p>You successfully destroyed COVID-19 and saved the world
             </p>
             <button class="button-popup">Destroy COVID-19 Again</button>
         </div>

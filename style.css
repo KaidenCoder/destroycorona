@@ -4,6 +4,10 @@
 
 body {
     background-color: rgba(20, 163, 221, 0.48);
+    background-image: url("earthcov.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* background-color: rgba(64, 163, 63, 0.4); */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -15,13 +19,20 @@ body {
 
 h1 {
     /* font-size: 45px; */
-    color: #fff;
+    /* color: #fff; */
 }
 
 canvas {
     background: #f0f0f0;
+    background-image: url('earth.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
     display: block;
     border-radius: 5px;
+}
+
+.text {
+    font-family: 'Courier New', Courier, monospace;
 }
 
 .btn {
@@ -115,26 +126,25 @@ canvas {
     margin: auto;
 }
 
-/* .covid {
- 
-    width: 800px;
-    height: 600px;
+.covid {
 
-} */
+    width: 800px;
+    height: 400px;
+
+}
 
 /* Media Queries  */
-/* @media only screen and (max-width: 600px) {
+@media only screen and (max-width: 600px) {
     .covid {
+        /* padding-left: 50px; */
 
-        width: 360px;
-        height: 400px;
         text-align: center;
         justify-content: center;
         transform: scale(1);
         resize: both;
         overflow: auto;
     }
-} */
+}
 
 
 @media screen and (max-width: 650px) {

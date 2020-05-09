@@ -6,14 +6,14 @@ console.log(canvas.width / 2)
 console.log(canvas.height / 2)
 const ctx = canvas.getContext('2d');
 var img = document.getElementById("scream");
-const buttonleft = document.getElementById('leftClick');
-const buttonright = document.getElementById('rightClick');
+// const buttonleft = document.getElementById('leftClick');
+// const buttonright = document.getElementById('rightClick');
 
 
-let score = 8;
+let score = 27;
 
-const brickRowCount = 4;
-const brickColumnCount = 2;
+const brickRowCount = 9;
+const brickColumnCount = 3;
 
 // Create ball props
 const ball = {
@@ -61,6 +61,7 @@ for (let i = 0; i < brickRowCount; i++) {
 function drawBall() {
     ctx.beginPath();
     ctx.arc(ball.x, ball.y, ball.size, 0, Math.PI * 2);
+    // ctx.fillStyle = 'rgba(0,0,0,0.6)';
     ctx.fillStyle = '#02b3e4';
     ctx.fill();
     ctx.closePath();
@@ -71,6 +72,7 @@ function drawPaddle() {
     ctx.beginPath();
     ctx.rect(paddle.x, paddle.y, paddle.w, paddle.h);
     ctx.fillStyle = '#02b3e4';
+    // ctx.fillStyle = 'rgba(0,0,0,0.5)';
     ctx.fill();
     ctx.closePath();
 }
@@ -78,7 +80,7 @@ function drawPaddle() {
 // Draw score on canvas
 function drawScore() {
 
-    ctx.fillText(`Score: ${score}`, canvas.width - 100, 30)
+    ctx.fillText(`Remaining: ${score}`, canvas.width - 170, 30)
 }
 
 // Draw bricks on canvas
@@ -87,7 +89,7 @@ function drawBricks() {
         column.forEach(brick => {
             ctx.beginPath();
             // ctx.rect(brick.x, brick.y, brick.w, brick.h);
-            ctx.fillStyle = brick.visible ? '#02b3e4' : 'transparent';
+            ctx.fillStyle = brick.visible ? 'rgba(255,0,0, 0.7)' : 'transparent';
             ctx.font = '20px Arial';
             ctx.fillText("COVID-19", brick.x, brick.y, brick.w, brick.h);
             // ctx.drawImage(img, brick.x, brick.y, brick.w, brick.h);
@@ -111,25 +113,6 @@ function movePaddle() {
     }
 }
 
-buttonleft.addEventListener('click', function () {
-    paddle.x += paddle.dx;
-
-    // Wall detection
-    if (paddle.x + paddle.w > canvas.width) {
-        paddle.x = canvas.width - paddle.w;
-    }
-})
-
-buttonright.addEventListener('click', function () {
-    if (paddle.x < 0) {
-        paddle.x = 0
-    }
-
-    // Wall detection
-    if (paddle.x + paddle.w > canvas.width) {
-        paddle.x = canvas.width - paddle.w;
-    }
-})
 
 // Move ball on canvas
 function moveBall() {
@@ -174,7 +157,7 @@ function moveBall() {
     // hit bottom wall -lose
     if (ball.y + ball.size > canvas.height) {
         showAllBricks();
-        score = 8;
+        score = 27;
     }
 }
 
@@ -196,7 +179,6 @@ buttonpopup.addEventListener('click', function () {
     showAllBricks();
     canvas.style.display = 'block'
 })
-
 
 // Increase score
 function increaseScore() {
@@ -220,7 +202,6 @@ function draw() {
     drawPaddle()
     drawScore()
     drawBricks()
-
 }
 
 // Update canvas drawing and animation
@@ -252,9 +233,26 @@ function keyUp(e) {
     }
 }
 
+function leftClick(e) {
+    if (e.keyCode === 37) {
+        paddle.dx = -paddle.speed;
+    }
+}
+
+function rightClick(e) {
+    if (e.keyCode === 39) {
+        paddle.dx = paddle.speed;
+    }
+}
+
 // Keyboard event handlers
 document.addEventListener('keydown', keyDown);
 document.addEventListener('keyup', keyUp)
+
+// buttonleft.addEventListener('click', leftClick)
+// console.log(buttonpopup)
+
+// buttonright.addEventListener('click', rightClick)
 
 // Rules and close event handlers
 rulesBtn.addEventListener('click', () => rules.classList.add('show'))
